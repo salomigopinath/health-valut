@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedChain | Secure Healthcare Blockchain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="glass animate-slide">
+        <div class="logo">
+            <span class="card-icon">🏥</span>
+            <span>MedChain</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="owner.html">Owner</a></li>
+            <li><a href="patient.html">Patient</a></li>
+            <li><a href="hospital.html">Hospital</a></li>
+        </ul>
+        <div id="roleBadge" class="role-badge"></div>
+        <button class="btn btn-primary" id="connectWallet">Connect Wallet</button>
+    </nav>
+
+    <header class="hero animate-fade">
+        <h1>MedChain</h1>
+        <p>A Decentralized Health Data Management System for patients, hospitals, and medical owners. Secure,
+            transparent, and private.</p>
+        <div class="cta-btns">
+            <button class="btn btn-primary">Get Started</button>
+            <button class="btn btn-outline" style="margin-left: 1rem;">Learn More</button>
+        </div>
+    </header>
+
+    <main class="dashboard-grid animate-fade" style="animation-delay: 0.2s;">
+        <section class="card glass">
+            <div class="card-icon">👑</div>
+            <div class="card-content">
+                <h3>Owner Dashboard</h3>
+                <p>Manage the platform, register hospitals, and oversee system governance.</p>
+            </div>
+            <a href="owner.html" class="btn btn-outline">Enter Dashboard</a>
+        </section>
+
+        <section class="card glass">
+            <div class="card-icon">👨‍⚕️</div>
+            <div class="card-content">
+                <h3>Patient Dashboard</h3>
+                <p>Access your medical records, manage permissions, and track health history securely.</p>
+            </div>
+            <a href="patient.html" class="btn btn-outline">Enter Dashboard</a>
+        </section>
+
+        <section class="card glass">
+            <div class="card-icon">🏥</div>
+            <div class="card-content">
+                <h3>Hospital Dashboard</h3>
+                <p>Securely record and manage patient visits, diagnosis, and prescription data.</p>
+            </div>
+            <a href="hospital.html" class="btn btn-outline">Enter Dashboard</a>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+    <script src="config.js"></script>
+    <script src="contract.js"></script>
+    <script src="blockchain.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

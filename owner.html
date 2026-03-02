@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard | MedChain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="glass animate-slide">
+        <div class="logo">
+            <span class="card-icon">👑</span>
+            <span>MedChain | Owner</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="owner.html">Dashboard</a></li>
+            <li><a href="patient.html">Patient</a></li>
+            <li><a href="hospital.html">Hospital</a></li>
+        </ul>
+        <div id="roleBadge" class="role-badge"></div>
+        <button class="btn btn-primary" id="connectWallet">Connect Wallet</button>
+    </nav>
+
+    <main class="animate-fade" style="padding: 2rem 5%;">
+        <header class="hero" style="text-align: left; align-items: flex-start; max-width: 1200px; padding: 2rem 0;">
+            <h1>Owner Dashboard</h1>
+            <p>Welcome, Administrator. Manage hospital registrations and system health here.</p>
+        </header>
+
+        <div class="dashboard-grid" style="padding: 0; max-width: 1200px;">
+            <section class="card glass">
+                <h3>Register Hospital</h3>
+                <p>Add a new hospital to the MedChain network using their wallet address.</p>
+                <div style="display: flex; flex-direction: column; gap: 1rem; text-align: left;">
+                    <input type="text" id="hospitalAddress" placeholder="Hospital Wallet Address">
+                    <input type="text" id="hospitalName" placeholder="Hospital Name">
+                    <button class="btn btn-primary" onclick="handleRegisterHospital()">Register</button>
+
+                    <div id="txResult" class="tx-panel glass">
+                        <h4>✅ Transaction Successful</h4>
+                        <p id="txHashDisplay"></p>
+                        <p id="txBlockDisplay"></p>
+                        <p id="txGasDisplay"></p>
+                        <a id="txEtherscan" href="#" target="_blank" class="tx-link">View on Etherscan</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card glass">
+                <h3>Registered Hospitals</h3>
+                <div id="hospitalList" style="text-align: left; margin-top: 1rem; width: 100%;">
+                    <p style="padding: 1rem; border-bottom: 1px solid #ddd;">Connecting to blockchain...</p>
+                </div>
+                <button class="btn btn-outline" style="margin-top: 1rem;" onclick="handleFetchHospitals()">Refresh
+                    List</button>
+            </section>
+        </div>
+    </main>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+    <script src="config.js"></script>
+    <script src="contract.js"></script>
+    <script src="blockchain.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
